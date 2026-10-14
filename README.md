@@ -16,6 +16,10 @@ The project is a finished offline tool.
 
 **GitHub About:** A finished offline tool for uniform documents: split a PDF into one file per page and name each file from a template.
 
+**Лицензия:** [PolyForm Noncommercial 1.0.0](LICENSE). Некоммерческое использование разрешено. Коммерческое использование — только по отдельному соглашению с vibic777.
+**License:** [PolyForm Noncommercial 1.0.0](LICENSE). Noncommercial use is allowed. Commercial use requires a separate agreement with vibic777.
+
+
 [Русский README](README.ru.md) · [ТЗ](TZ_RU.md) · [Task list](AGENT_TASKLIST_EN.md)
 
 **Author:** vibic777 (`vibic@yandex.ru`)
