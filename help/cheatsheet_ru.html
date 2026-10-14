@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Шпаргалка</title>
+  <style>
+    body { font-family: Segoe UI, sans-serif; font-size: 13px; }
+    table { border-collapse: collapse; width: 100%; }
+    td, th { border: 1px solid #ccc; padding: 4px 8px; text-align: left; }
+  </style>
+</head>
+<body>
+  <h2>Шаблон имени</h2>
+  <p><code>Акт о прием №{1} от {2}</code> — поля 1 и 2.</p>
+  <p><code>имя_{505:+1#}</code> — 505, 506, 507 по факту сохранения (пропуск не считается). <code>{1:+1}</code> — номер листа в PDF.</p>
+  <p><code>{20:-1}</code> минус, <code>{2:*2}</code> умножение (2, 4, 8), <code>{0:%10}</code> остаток. <code>%0</code> нельзя — пусто, без падения.</p>
+  <p>Если <code>{3}</code> нет поля — пусто. Итоговое имя можно вписать руками.</p>
+  <p>Паттерн поля — <strong>позиции</strong>: тип данных + что написать в имя, если OCR соврал.</p>
+  <table>
+    <tr><th>Пишете</th><th>Значит</th><th>Пример</th></tr>
+    <tr><td><code>D</code></td><td>цифра</td><td><code>5</code></td></tr>
+    <tr><td><code>@{№}D{1,4}</code></td><td>якорь перед числом; для № также принимаются OCR-варианты <code>No</code>, <code>Nº</code>, <code>N°</code></td><td><code>№ 216</code> → <code>216</code><br><code>No 216</code> → <code>216</code></td></tr>
+    <tr><td><code>@{ИНН|INN}D{10,12}</code></td><td>один из маркеров перед числом; варианты разделяются <code>|</code></td><td><code>ИНН 7701234567</code> → <code>7701234567</code></td></tr>
+    <tr><td><code>D{1,4}@{руб}</code></td><td>якорь после числа; маркер не входит в значение</td><td><code>216 руб.</code> → <code>216</code></td></tr>
+    <tr><td><code>H</code> / <code>h</code> / <code>X</code></td><td>hex: в имя верх / низ / как есть</td><td><code>ab</code> → <code>AB</code> / <code>ab</code> / <code>ab</code></td></tr>
+    <tr><td><code>C</code> / <code>U</code> / <code>L</code></td><td>буква: как есть / верх / низ</td><td><code>акт</code> → <code>акт</code> / <code>АКТ</code> / <code>акт</code></td></tr>
+    <tr><td><code>HH.HH.HHHH</code></td><td>hex; точка мягкая</td><td><code>AB,0F FFCC</code> → <code>AB.0F.FFCC</code></td></tr>
+    <tr><td><code>[*>.]</code> или <code>[*\c=.]</code></td><td>мусор/пусто → в имя <code>.</code></td><td>канон точки</td></tr>
+    <tr><td><code>[*>]</code> или <code>[*\d]</code></td><td>мусор/пусто → удалить</td><td><code>AB0FFFCC</code></td></tr>
+    <tr><td><code>DD.DD.DDDD</code></td><td>дата, нули слева</td><td><code>1.1.2024</code> → <code>01.01.2024</code></td></tr>
+    <tr><td><code>M</code> / <code>MM</code></td><td>месяц: цифры 1–12 или слово; в имени всегда две цифры</td><td><code>«27» марта 2026 г.</code> + <code>DD.M</code> → <code>27.03</code></td></tr>
+    <tr><td><code>D{1,4}</code></td><td>от 1 до 4 цифр, без нулей слева</td><td><code>22</code> → <code>22</code>, не <code>0022</code></td></tr>
+    <tr><td><code>C{1,4}</code></td><td>от 1 до 4 букв</td><td><code>ЯНА</code> и <code>ВАСЯ</code></td></tr>
+    <tr><td><code>D+</code> / <code>C+</code></td><td>одна или больше цифр / букв</td><td>без ограничения длины</td></tr>
+    <tr><td><code>{0-9}</code></td><td>класс цифр 1+</td><td><code>154</code></td></tr>
+  </table>
+  <h3>Готовые примеры</h3>
+  <ul>
+    <li>Номер акта 22–2167: <code>D{1,4}</code>.</li>
+    <li>День и месяц без года: <code>«27» 03 2026 г.</code> или <code>«27» марта 2026 г.</code> + <code>DD.M</code> → <code>27.03</code>; кавычки и год в значение не входят.</li>
+    <li>Полная дата «1 июня 2026» или «01/06/2026»: <code>DD.M.DDDD</code> → <code>01.06.2026</code>.</li>
+    <li>Имя «ЯНА» или «АЛЕКСАНДР»: <code>C+</code>.</li>
+    <li>Шаблон <code>Акт_{1}_от_{2}_{505:+1#}</code> с номером 22 и датой даст <code>Акт_22_от_01.06.2026_505.pdf</code>.</li>
+  </ul>
+  <p>Языки OCR: «Кириллица (русский)» для русского текста, «Латиница» для English и других латинских языков. Новое поле наследует глобальные настройки. Пустой паттерн — предупреждение. Налезание рамок: у каждой Обрезать или Распознавать. Значение по умолчанию и галка «Запоминать последнее» (пишет только применённое значение, не сырой OCR) задаются у поля; в окне проверки — список «скан / по умолчанию».</p>
+</body>
+</html>

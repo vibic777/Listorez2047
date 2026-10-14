@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>How to use Listorez2047</title>
+</head>
+<body>
+  <h1>How to use Listorez2047</h1>
+  <p>Listorez2047 splits a PDF into one file per page and names each file from a template. OCR is only for the filename. The page content is copied as-is.</p>
+
+  <h2>Digital PDF vs scan</h2>
+  <ul>
+    <li><strong>Digital</strong> — the PDF has a text layer. With OCR off, values come from the field rectangle; with OCR on, the app tries the text layer first on digital pages.</li>
+    <li><strong>Scan</strong> — the page is only an image. Enable the OCR checkbox, or type values by hand.</li>
+  </ul>
+
+  <h2>Typical steps</h2>
+  <ol>
+    <li>Open a PDF. Pick an output folder (absolute or relative to the PDF folder; missing folders can be created).</li>
+    <li>Load a profile or draw fields on the preview. Overlapping frames are allowed: each field has Clip / Recognize.</li>
+    <li>A default is fixed when both options are off. Evaluate expression supports the filename formulas; Remember last value copies the last applied value (after a human correction, on Apply or Save) to the next page. Raw OCR is not remembered by itself. The options are mutually exclusive.</li>
+    <li>Set the filename template, for example <code>Acceptance act No.{1} from {2}</code>.</li>
+    <li>Recognize the page, edit values if needed, Save — or press <strong>Auto</strong> to process the whole file.</li>
+  </ol>
+
+  <h2>Filename template</h2>
+  <p><code>{1}</code>, <code>{2}</code> insert field values. <code>{505:+1#}</code> numbers in save order (skips do not count). <code>{1:+1}</code> is the page number in the PDF. The same formulas as a field default belong in the <strong>default value</strong> (for example <code>{235:+1}</code>) with Evaluate expression; not in the OCR pattern. Remember last value instead carries the last <em>applied</em> text (after a human correction) to the next page; raw OCR is not stored by itself. The two options are mutually exclusive; both off means a fixed default.</p>
+  <p>A bad pattern, or a filename formula left in the OCR pattern instead of the default value, does not close the app: a warning is shown, that frame yields an empty result, and you can fix it and continue.</p>
+
+  <h2>Field patterns</h2>
+  <p>Open <strong>Cheat sheet</strong> (button <code>?</code> or F2) for the token table: <code>D</code> digit, <code>H</code>/<code>h</code> hex, <code>C</code> letter, <code>{0-9}</code> digits, and so on. After OCR the text is normalized to the pattern. If it still does not match, type the value yourself.</p>
+  <p>For an all-numeric date use <code>DD.DD.DDDD</code>. If the month may be numeric or a word (“01 June 2026”), use <code>DD.M.DDDD</code>; the filename receives <code>01.06.2026</code>. If you do not need the year, use <code>DD.M</code>: <code>“27” 03 2026 г.</code> becomes <code>27.03</code>, and <code>“27” March 2026 г.</code> also becomes <code>27.03</code>. Quotes and text after the month are not included; month names are converted to digits. For a variable-length number use <code>D{1,4}</code> or <code>D+</code> to avoid leading-zero padding. For a variable-length name use <code>C{1,12}</code> or <code>C+</code>.</p>
+  <p>A context anchor <code>@{text}</code> requires a marker in the recognized text but does not emit it. Separate alternatives with <code>|</code>. For example:</p>
+  <ul>
+    <li><code>@{№}D{1,4}</code>: <code>№ 216</code> or <code>No 216</code> → <code>216</code>. Common OCR forms <code>No</code>, <code>Nº</code>, and <code>N°</code> are accepted automatically for №.</li>
+    <li><code>@{ИНН|INN}D{10,12}</code>: <code>ИНН 7701234567</code> → <code>7701234567</code>; the Latin marker also works.</li>
+    <li><code>D{1,4}@{руб}</code>: <code>216 руб.</code> → <code>216</code>; the anchor may follow the number.</li>
+  </ul>
+  <p>Use an anchor when its marker distinguishes the desired value from other numbers. Anchors filter recognized text; they cannot restore characters the OCR missed.</p>
+  <p><strong>Complete example:</strong> field 1 “Number” with <code>D{1,4}</code> recognizes <code>22</code>; field 2 “Date” with <code>DD.M.DDDD</code> recognizes <code>1 June 2026</code>. Template <code>Act_{1}_from_{2}</code> produces <code>Act_22_from_01.06.2026.pdf</code>.</p>
+
+  <h2>Frames and field selection</h2>
+  <p>Click a frame to select its field in the list. Click a list field to highlight its frame. Drag the middle to move a frame; drag the square handle at the lower-right corner to resize it.</p>
+  <p>Enter exact X, Y, width and height in page percent, preview pixels, millimetres, or centimetres. Contrast is stored per field and included in profiles. Use Remove gray paper background for faint gray pencil on off-white paper. The visible −, + and Fit controls adjust the preview, and Auto preserves its zoom and position between pages.</p>
+  <p>To process a page again, right-click it and choose Reset page to pending. This does not delete an existing output file.</p>
+
+  <h2>Three ways to work</h2>
+  <ul>
+    <li><strong>Auto</strong> recognizes sequentially on a background thread. Preview stays usable: zoom, pan, and Save view. Auto progress is non-modal. The pause/review dialog is also non-modal, so preview zoom and pan still work. While the app is running, progress and review stay where you dragged them; a restart puts them back. Configuration has a reset. Restarting skips saved/skipped pages and preserves manual corrections.</li>
+    <li><strong>Per page</strong> — Recognize page → check → Save or Next.</li>
+    <li><strong>By hand</strong> — “Manual field input” (F6) opens every field with existing recognized values. Editing immediately rebuilds the filename; Enter applies the values and saves the PDF, Alt+S skips the page, and Esc cancels input.</li>
+  </ul>
+  <p>If a field is empty, review shows every field, template, and filename. Each value is a dropdown with the scan result and the default; you can also type your own. For faint pencil, set that field's contrast to 2.0–3.0 and press <strong>Retry field</strong>. Only that frame is recognized again, then a choice dialog offers the new scan result or the default. The same review appears after manual recognition and before saving with an empty field.</p>
+  <p><strong>Default value</strong> is configured next to the pattern. If OCR finds nothing, review opens with this text instead of an empty input. The fallback does not bypass mandatory review.</p>
+  <h2>OCR engines and error log</h2>
+  <p>Recognition uses RapidOCR / PP-OCRv5 on CPU. Surya, PyTorch, Transformers, and CUDA are not used. Contrast and preprocessing can be set on the field immediately — they apply to the first Recognize page and to Auto, not only on Retry field.</p>
+  <p>The same dialog enables logging (off by default) and selects its path. Levels are checkboxes: TRACE, DEBUG, INFO, WARNING, ERROR, CRITICAL — all on by default when logging is enabled. Startup, OCR, saves, and unhandled Qt failures are recorded. A packaged exe writes <code>Listorez2047.log</code> next to the program; from source the default is <code>AppData\Listorez2047</code>.</p><p>The preview has four controls: minus, plus, Fit, and Save view. Save view makes the current zoom and center the default for subsequent pages in the open document and Auto.</p>
+
+  <h2>Profiles</h2>
+  <p>Save the field layout, template, OCR settings, and output folder to a profile and load it on another PDF of the same form. One profile per open file. Auto-deskew corrects small skew angles in the OCR crop.</p>
+
+  <h2>Configuration</h2>
+  <p>Default OCR DPI is 300. RapidOCR 3.9.2 runs PP-OCRv5 ONNX models on CPU. CPU threads, detector size, and recognition batch are applied to ONNX. Selected languages run sequentially with one language model in memory at a time. Faint-text contrast 1.0 means no enhancement; try 2.0–3.0 for light pencil. Excessive contrast can amplify paper noise. “Cyrillic (Russian)” is for Russian text; “Latin” covers English and other Latin-script languages. Default OCR strategy is assigned to new field frames. Reset window positions puts progress, review, and other dialogs back in this session (positions are not stored across restarts).</p>
+  <p>Custom page format displays width and height. Choose mm, cm, or inches; changing units converts the values while preserving physical size. For example, 210 × 297 mm equals 21 × 29.7 cm.</p>
+  <p>The command line only provides help: <code>Listorez2047.exe --help</code> or <code>-h</code> lists options, and <code>--version</code> prints the version. With no options the GUI opens. PDF and output-folder CLI arguments are not supported.</p>
+
+  <h2>Faint-pencil strategies</h2>
+  <ul><li><strong>Standard</strong> — no special processing.</li><li><strong>Local contrast (CLAHE)</strong> — first choice for faint pencil; start at 2.0.</li><li><strong>Remove gray paper background</strong> — evens out off-white paper and isolates thin light-gray pencil strokes; start at 2.0–2.5.</li><li><strong>Adaptive threshold</strong> — uneven or gray paper.</li><li><strong>Remove horizontal lines</strong> — suppresses a heavy underline before OCR.</li><li><strong>Upscale and sharpen</strong> — small, thin writing.</li></ul>
+  <p>If standard OCR is unsure or its result does not match the field pattern, the app retries with local contrast and enlargement, adaptive black/white processing, and horizontal-line removal. Distinct results that match the pattern appear first in the choice dialog; retries can take longer. Enable “Cyrillic (Russian)” for Russian and “Latin” for English; enable both for mixed-language fields. PP-OCRv5 reports improvements for handwritten English, but cursive and Russian handwriting are not guaranteed. Review the proposed value and correct it manually when needed.</p>
+  <p>Choose a strategy on the field editor immediately, from the first recognize. In review you can change it and press Retry field. A choice dialog then offers the new scan result or the default; you can also type your own. OCR renders the field region rather than the full page and applies the configured maximum raster side. Try another strategy if needed; handwriting cannot be guaranteed, so manual input remains available.</p>
+
+  <h2>Keyboard</h2>
+  <table border="1" cellspacing="0" cellpadding="4"><tr><th>Keys</th><th>Action</th></tr><tr><td>Ctrl+O</td><td>Open PDF</td></tr><tr><td>Ctrl+S</td><td>Save page</td></tr><tr><td>Ctrl+Shift+S</td><td>Auto</td></tr><tr><td>F5</td><td>Recognize page</td></tr><tr><td>F6</td><td>Manually review and edit every field on the current page</td></tr><tr><td>Ctrl+Right</td><td>Next / skip</td></tr><tr><td>Ctrl+Insert / Delete</td><td>Add / delete field</td></tr><tr><td>Ctrl+Backspace</td><td>Reset page status</td></tr><tr><td>Ctrl+L / Ctrl+Shift+P</td><td>Load / save profile</td></tr><tr><td>Ctrl++ / Ctrl+- / Ctrl+0</td><td>Zoom in / out / fit</td></tr><tr><td>F1 / F2</td><td>Help / cheat sheet</td></tr><tr><td>Alt+L / Alt+P / Alt+V</td><td>Label / pattern / value</td></tr><tr><td>Alt+G / Alt+C</td><td>Geometry / contrast</td></tr></table>
+  <p>In review, Tab/Shift+Tab moves through controls, Enter applies and continues, Esc cancels Auto, Alt+S skips the page, and Alt+1…Alt+9 retries the corresponding field.</p>
+
+  <h2>Numeric limits</h2>
+  <p>DPI 100–600; OCR side 800–10000 px; CPU 1–4; score 0–1; detector 320–4096; batch 1–32; padding 0–50%; contrast 1.0–4.0. Mouse arrows and ↑/↓ stop at these limits. Frame X/Y stay on the page and width/height cannot cross its right or bottom edge.</p>
+
+  <h2>Common problems</h2>
+  <ul>
+    <li>Empty field — draw a larger rectangle or type the value.</li>
+    <li>Wrong snippet — several matches: pick one in the popup or in the review dropdown (scan / default). Auto has no that popup during batch OCR, but an empty field pauses the batch.</li>
+    <li>Small skew — enable Auto-deskew in the OCR settings. For a 90° or 180° rotation, use the page rotation controls.</li>
+    <li>Password-protected PDF — the file will not open; remove the password first.</li>
+  </ul>
+</body>
+</html>

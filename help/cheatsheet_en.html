@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cheat sheet</title>
+  <style>
+    body { font-family: Segoe UI, sans-serif; font-size: 13px; }
+    table { border-collapse: collapse; width: 100%; }
+    td, th { border: 1px solid #ccc; padding: 4px 8px; text-align: left; }
+  </style>
+</head>
+<body>
+  <h2>Filename template</h2>
+  <p><code>Acceptance act No.{1} from {2}</code> — fields 1 and 2.</p>
+  <p><code>name_{505:+1#}</code> — 505, 506, 507 in save order (skips do not count). <code>{1:+1}</code> — page number in the PDF.</p>
+  <p><code>{20:-1}</code> minus, <code>{2:*2}</code> multiply (2, 4, 8), <code>{0:%10}</code> modulo. <code>%0</code> is forbidden — empty, no crash.</p>
+  <p>If <code>{3}</code> has no field — empty. You may type the final name by hand.</p>
+  <p>A field pattern is <strong>positions</strong>: a data type plus what to write into the filename if OCR lies.</p>
+  <table>
+    <tr><th>You write</th><th>Means</th><th>Example</th></tr>
+    <tr><td><code>D</code></td><td>digit</td><td><code>5</code></td></tr>
+    <tr><td><code>@{№}D{1,4}</code></td><td>anchor before a number; OCR forms <code>No</code>, <code>Nº</code>, and <code>N°</code> are also accepted for №</td><td><code>№ 216</code> → <code>216</code><br><code>No 216</code> → <code>216</code></td></tr>
+    <tr><td><code>@{ИНН|INN}D{10,12}</code></td><td>one of these markers before the number; separate alternatives with <code>|</code></td><td><code>ИНН 7701234567</code> → <code>7701234567</code></td></tr>
+    <tr><td><code>D{1,4}@{руб}</code></td><td>anchor after the number; marker is not emitted</td><td><code>216 руб.</code> → <code>216</code></td></tr>
+    <tr><td><code>H</code> / <code>h</code> / <code>X</code></td><td>hex: emit upper / lower / as-is</td><td><code>ab</code> → <code>AB</code> / <code>ab</code> / <code>ab</code></td></tr>
+    <tr><td><code>C</code> / <code>U</code> / <code>L</code></td><td>letter: as-is / upper / lower</td><td></td></tr>
+    <tr><td><code>HH.HH.HHHH</code></td><td>hex; soft dots</td><td><code>AB,0F FFCC</code> → <code>AB.0F.FFCC</code></td></tr>
+    <tr><td><code>[*>.]</code> or <code>[*\c=.]</code></td><td>junk/empty → write <code>.</code></td><td>canonicalize</td></tr>
+    <tr><td><code>[*>]</code> or <code>[*\d]</code></td><td>junk/empty → delete</td><td><code>AB0FFFCC</code></td></tr>
+    <tr><td><code>DD.DD.DDDD</code></td><td>date, left-pad</td><td><code>1.1.2024</code> → <code>01.01.2024</code></td></tr>
+    <tr><td><code>M</code> / <code>MM</code></td><td>month: digits 1–12 or a word; emitted as two digits</td><td><code>“27” March 2026</code> + <code>DD.M</code> → <code>27.03</code></td></tr>
+    <tr><td><code>D{1,4}</code></td><td>1 to 4 digits, no leading-zero padding</td><td><code>22</code> → <code>22</code>, not <code>0022</code></td></tr>
+    <tr><td><code>C{1,4}</code></td><td>1 to 4 letters</td><td><code>ANN</code> and <code>JOHN</code></td></tr>
+    <tr><td><code>D+</code> / <code>C+</code></td><td>one or more digits / letters</td><td>unlimited length</td></tr>
+    <tr><td><code>{0-9}</code></td><td>digit class 1+</td><td><code>154</code></td></tr>
+  </table>
+  <h3>Ready-to-use examples</h3>
+  <ul>
+    <li>Act number from 22 to 2167: <code>D{1,4}</code>.</li>
+    <li>Day and month without year: <code>“27” 03 2026 г.</code> or <code>“27” March 2026</code> + <code>DD.M</code> → <code>27.03</code>; quotes and year are omitted.</li>
+    <li>Full date “1 June 2026” or “01/06/2026”: <code>DD.M.DDDD</code> → <code>01.06.2026</code>.</li>
+    <li>Name “ANN” or “ALEXANDER”: <code>C+</code>.</li>
+    <li>Template <code>Act_{1}_from_{2}_{505:+1#}</code> with number 22 produces <code>Act_22_from_01.06.2026_505.pdf</code>.</li>
+  </ul>
+  <p>OCR languages: “Cyrillic (Russian)” for Russian text and “Latin” for English and other Latin-script languages. New fields inherit global settings. Empty pattern: warning. Overlapping frames: per-field Clip or Recognize. Field default and Remember last value (stores the applied value, not raw OCR) are set on the field; review offers a scan/default dropdown.</p>
+</body>
+</html>

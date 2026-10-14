@@ -1,0 +1,244 @@
+{
+  "app.name": "Listorez2047",
+  "menu.file": "File",
+  "menu.file.open": "Open PDF…",
+  "menu.file.close": "Close",
+  "menu.file.output_folder": "Output folder…",
+  "menu.file.save_page": "Save page",
+  "menu.file.auto": "Auto",
+  "menu.file.exit": "Exit",
+  "menu.profile": "Profile",
+  "menu.profile.load": "Load…",
+  "menu.profile.save": "Save",
+  "menu.profile.save_as": "Save as…",
+  "menu.edit": "Edit",
+  "menu.edit.add_field": "Add field",
+  "menu.edit.delete_field": "Delete field",
+  "menu.edit.recognize_page": "Recognize page",
+  "menu.edit.reset_page": "Reset page to pending",
+  "menu.view": "View",
+  "menu.view.zoom_in": "Zoom in",
+  "menu.view.zoom_out": "Zoom out",
+  "menu.view.fit": "Fit to window",
+  "menu.view.rotate": "Rotate…",
+  "menu.view.language": "Language",
+  "menu.view.skin": "Skin",
+  "menu.view.icon": "App icon",
+  "skin.it_gray": "Gray (IT)",
+  "skin.auto_black": "Black (automotive)",
+  "skin.gas_blue": "Blue (gas)",
+  "skin.transport_green": "Green (transport)",
+  "icon.it": "Listorez",
+  "icon.auto": "Automotive",
+  "icon.gas": "Gas",
+  "icon.transport": "Transport (rail + air)",
+  "dialog.config.skin": "Skin",
+  "dialog.config.icon": "App icon",
+  "menu.ocr": "OCR",
+  "menu.ocr.enable": "Enable OCR",
+  "menu.ocr.deskew": "Auto-deskew",
+  "menu.ocr.config": "Configuration…",
+  "menu.help": "Help",
+  "menu.help.howto": "How to use the program",
+  "menu.help.cheatsheet": "Pattern and filename cheat sheet",
+  "menu.help.about": "About",
+  "ui.file": "File",
+  "ui.browse": "Browse…",
+  "ui.ocr": "OCR",
+  "ui.output_folder": "Output folder",
+  "ui.name_template": "Filename template",
+  "ui.name_preview": "Filename preview",
+  "ui.load_profile": "Load profile",
+  "ui.save_profile": "Save profile",
+  "ui.deskew": "Auto-deskew",
+  "ui.config": "Configuration",
+  "ui.pages": "Pages",
+  "ui.fields": "Fields",
+  "ui.cheatsheet": "Cheat sheet",
+  "ui.preview": "Preview",
+  "ui.zoom_in": "Zoom in",
+  "ui.zoom_out": "Zoom out",
+  "ui.fit": "Fit",
+  "ui.add_field": "Add field",
+  "ui.delete_field": "Delete",
+  "ui.recognize_page": "Recognize page",
+  "ui.manual_input": "Manual field input",
+  "tooltip.manual_input": "Open every field on the current page with existing recognized values for manual review and correction.",
+  "menu.edit.manual_input": "Manual field input",
+  "ui.save": "Save",
+  "ui.next": "Next / Skip",
+  "ui.auto": "Auto",
+  "ui.auto.tooltip": "Recognize all names and save. Preview stays available: zoom, pan, and Save view.",
+  "ui.pattern": "Pattern",
+  "ui.default_value": "Default value",
+  "ui.value": "Value",
+  "ui.field_label": "Label",
+  "ui.ocr_languages": "OCR languages",
+  "ui.geometry": "Position and size",
+  "ui.contrast": "Contrast",
+  "ui.contrast.enable": "Enhance faint text",
+  "ui.overlap": "Overlap",
+  "ui.overlap.clip": "Clip",
+  "ui.overlap.recognize": "Recognize",
+  "ui.overlap.tooltip": "When frames overlap: clip the other field out of this one, or OCR the full rectangle.",
+  "status.page_of": "Page {current} of {total}",
+  "status.digital": "digital",
+  "status.scan": "scan",
+  "status.mixed": "mixed",
+  "status.ocr_on": "OCR on",
+  "status.ocr_off": "OCR off",
+  "status.ready": "Ready",
+  "page.pending": "pending",
+  "page.recognized": "recognized",
+  "page.saved": "saved",
+  "page.skipped": "skipped",
+  "page.error": "error",
+  "page.duplicate": "duplicate",
+  "page.current": "current",
+  "dialog.rotate.title": "Rotate page",
+  "dialog.rotate.left": "90° left",
+  "dialog.rotate.180": "180°",
+  "dialog.rotate.right": "90° right",
+  "dialog.rotate.angle": "Angle",
+  "dialog.rotate.apply_all": "Apply to all pages",
+  "dialog.rotate.reset": "Reset",
+  "dialog.rotate.apply": "Apply",
+  "dialog.duplicate.title": "File already exists",
+  "dialog.duplicate.body": "{name} already exists in the folder.",
+  "dialog.duplicate.rename": "Save under a different name",
+  "dialog.duplicate.suffix": "Auto suffix -1, -2, -3",
+  "dialog.candidates.title": "Several matches",
+  "dialog.candidates.own": "Your value",
+  "dialog.candidates.skip": "Skip",
+  "dialog.candidates.choose": "Choose",
+  "dialog.notext.title": "No text layer",
+  "dialog.notext.body": "This page has no text. Enable OCR?",
+  "dialog.notext.page": "For this page",
+  "dialog.notext.file": "For the whole file",
+  "dialog.auto_report.title": "Auto finished",
+  "dialog.auto_report.saved": "Saved: {n}",
+  "dialog.auto_report.empty": "Pages with empty fields",
+  "dialog.auto_report.suffix": "Renamed with a suffix",
+  "dialog.config.title": "OCR configuration",
+  "dialog.config.language": "Interface language",
+  "dialog.config.defaults": "Defaults",
+  "dialog.config.save": "Save",
+  "common.cancel": "Cancel",
+  "common.close": "Close",
+  "common.ok": "OK",
+  "about.body": "Listorez2047 is an offline PDF splitter: one page per file, names from a template. OCR is used only to build the filename. Engine: RapidOCR / PP-OCRv5.",
+  "warn.fields_renumbered": "Fields were renumbered. Check the filename template.",
+  "lang.ru": "Русский",
+  "lang.en": "English",
+  "status.draw_field": "Draw the field rectangle on the page",
+  "error.encrypted": "The file is password protected and cannot be opened.",
+  "error.bad_pdf": "Could not open the PDF. It may be damaged.",
+  "error.render": "Could not display the page.",
+  "error.save": "Could not save the page. Check the folder and file access.",
+  "error.profile": "Could not load the profile.",
+  "error.language_required": "At least one OCR language must be enabled.",
+  "dialog.empty_pattern.body": "This field has no pattern. Continue with raw text from its frame?",
+  "dialog.empty_pattern.auto": "Some fields have no pattern. Continue the batch with raw frame text?",
+  "dialog.profile.replace": "Replace current fields with fields from the profile?",
+  "dialog.auto_report.errors": "Errors",
+  "config.dpi.label": "OCR DPI", "config.dpi.tooltip": "OCR raster resolution. 300 balances quality, memory and speed. It does not affect preview.",
+  "config.ocr_max_side.label": "Maximum side", "config.ocr_max_side.tooltip": "Maximum OCR raster side in pixels. 3508 is about A4 at 300 DPI.",
+  "config.cpu_threads.label": "CPU threads", "config.cpu_threads.tooltip": "ONNX threads within one page: 1 to 4, default 2.",
+  "config.use_angle_cls.label": "Angle classifier", "config.use_angle_cls.tooltip": "Checks 0°/180° text orientation. Slightly slower.",
+  "config.drop_score.label": "Minimum confidence", "config.drop_score.tooltip": "Text blocks below this score are discarded. 0.5 is balanced.",
+  "config.det_limit_side_len.label": "Detector size", "config.det_limit_side_len.tooltip": "RapidOCR detector size. Larger helps small text but uses more memory.",
+  "config.rec_batch_num.label": "Recognition batch", "config.rec_batch_num.tooltip": "Text blocks per recognition batch. 4–8 is normal.",
+  "config.lang_eslav.label": "Russian", "config.lang_eslav.tooltip": "Russian and East Slavic recognition model.",
+  "config.lang_latin.label": "Latin", "config.lang_latin.tooltip": "Latin languages: EN, DE, FR, ES and others.",
+  "config.lang_chinese.label": "Chinese", "config.lang_chinese.tooltip": "The Chinese model is larger and disabled by default.",
+  "config.prefer_native_text.label": "PDF text first", "config.prefer_native_text.tooltip": "Use the existing PDF text layer first on digital pages.",
+  "config.field_padding_pct.label": "Field padding, %", "config.field_padding_pct.tooltip": "Expands the field region to avoid clipping character edges.",
+  "help.pattern.month": "Date with a month word: use DD.M.DDDD; the filename always receives 01.06.2026.",
+  "dialog.auto_empty.title": "Auto stopped: empty fields",
+  "dialog.auto_empty.body": "Page {page} has values required for the filename that were not recognized. Fill them before saving.",
+  "dialog.auto_empty.apply": "Apply and continue",
+  "dialog.auto_empty.skip": "Skip page",
+  "dialog.auto_empty.cancel": "Cancel Auto",
+  "dialog.manual.apply": "Apply and save",
+  "dialog.manual.cancel": "Cancel",
+  "dialog.auto_empty.required": "Fill every listed field or skip the page."
+  ,"dialog.auto_empty.missing_mark": " — NOT RECOGNIZED"
+  ,"dialog.auto_empty.filename_required": "The resulting filename cannot be empty."
+  ,"ocr.lang.cyrillic": "Cyrillic (Russian)"
+  ,"ocr.lang.latin": "Latin"
+  ,"ocr.lang.chinese": "Chinese"
+  ,"tooltip.field.label": "A readable field name, such as Date or Act number. It does not affect recognition."
+  ,"tooltip.field.pattern": "Search and normalization rule. Examples: DD.M.DDDD for a date; D{1,4} for up to 4 digits; C+ for a word."
+  ,"tooltip.field.value": "Result for the current page. It can always be corrected manually and is inserted into the filename as {field number}."
+  ,"tooltip.ocr_language": "Recognition models for this field. Select none to inherit global settings. Cyrillic is used for Russian text."
+  ,"tooltip.name_template": "Filename recipe. Example: Act_{1}_from_{2}_{505:+1#}. Fields use {1}, {2}; # counts successful saves."
+  ,"tooltip.filename": "Final name for the current page. You can edit it manually before saving."
+  ,"tooltip.page_format": "Expected form size. Custom exposes width and height in mm, cm, or inches."
+  ,"tooltip.custom_size": "Page width and height in the selected units. Changing units preserves the physical size and converts the values."
+  ,"config.ocr_contrast.label": "Faint-text contrast"
+  ,"config.ocr_contrast.tooltip": "Locally enhances faint pencil before OCR. 1.0 disables it; 2–3 makes strokes clearer but may amplify paper noise."
+  ,"tooltip.field.contrast": "Contrast for this field only. 1.0 is unchanged; 2–3 enhances faint pencil. Press Retry field after changing it."
+  ,"tooltip.field.geometry": "Frame X/Y coordinates and W/H size. Units: page percent, preview pixels, mm, or cm."
+  ,"dialog.recognition_review.title": "Recognition review"
+  ,"dialog.recognition_review.retry": "Retry field"
+  ,"dialog.recognition_review.retry.tooltip": "Recognize only this frame again with the selected contrast, then choose the scan result or the default value."
+  ,"dialog.recognition_review.value.tooltip": "Dropdown: scan result and default value. You can also type your own."
+  ,"status.recognizing": "Recognizing page {page} in background…"
+  ,"status.preview_free": "preview is available"
+  ,"status.ocr_busy": "OCR is already running in the background. You can zoom, pan, and save the preview view."
+  ,"error.ocr": "OCR error: {error}"
+  ,"tooltip.range": "Allowed range: {minimum}…{maximum}. Arrow buttons and ↑/↓ stop at the limits."
+  ,"tooltip.hotkey": "Keyboard shortcut: {shortcut}."
+  ,"tooltip.field.strategy": "Preprocessing for this field from the first recognize: CLAHE for pencil; Remove gray paper background for faint gray pencil on off-white paper; adaptive threshold; line removal; upscale and sharpen. Independent of the faint-text checkbox."
+  ,"ocr.strategy.standard": "Standard"
+  ,"ocr.strategy.clahe": "Local contrast (pencil)"
+  ,"ocr.strategy.paper_normalize": "Remove gray paper background"
+  ,"ocr.strategy.adaptive": "Adaptive black/white threshold"
+  ,"ocr.strategy.remove_lines": "Remove horizontal lines"
+  ,"ocr.strategy.upscale_sharpen": "Upscale and sharpen"
+  ,"tooltip.field.default_value": "Inserted when OCR finds nothing. Auto still pauses for review, where the dropdown lists the scan result and this default; the value can be corrected immediately."
+  ,"config.logging_enabled.label": "Write log"
+  ,"config.logging_enabled.tooltip": "Off by default. When enabled, writes startup, OCR, saves, and errors to a text file. Unhandled Qt failures are recorded too."
+  ,"config.log_path.label": "Log file path"
+  ,"config.log_path.tooltip": "For a packaged exe, Listorez2047.log sits next to the program. From source it defaults to AppData/Listorez2047. You may select another writable path."
+  ,"config.log_levels.label": "Log levels"
+  ,"config.log_levels.tooltip": "Choose which levels are written to the file. By default all are on: TRACE, DEBUG, INFO, WARNING, ERROR, CRITICAL."
+  ,"config.log_level.trace": "TRACE"
+  ,"config.log_level.debug": "DEBUG"
+  ,"config.log_level.info": "INFO"
+  ,"config.log_level.warning": "WARNING"
+  ,"config.log_level.error": "ERROR"
+  ,"config.log_level.critical": "CRITICAL"
+  ,"error.log": "Cannot open the log file. Select a writable path."
+  ,"error.log_levels_required": "Enable at least one log level, or turn logging off."
+  ,"ui.output_relative": "Relative path"
+  ,"tooltip.output_relative": "Resolved against the open PDF folder (or the profile folder). Absolute paths are allowed too. Stored in the profile with the output folder."
+  ,"dialog.create_folder.title": "Create folder?"
+  ,"dialog.create_folder.body": "The folder does not exist:\n{path}\n\nCreate it, including any missing parents?"
+  ,"error.create_folder": "Could not create the folder:\n{path}"
+  ,"error.output_not_dir": "The output path exists but is not a folder:\n{path}"
+  ,"config.ocr_engine.label": "Startup OCR engine"
+  ,"config.ocr_engine.tooltip": "RapidOCR / PP-OCRv5 runs on CPU."
+  ,"ocr.engine.rapidocr": "RapidOCR"
+  ,"status.engine_loading": "Loading {engine} into memory…"
+  ,"status.engine_error": "OCR could not be loaded: {error}. Details were written to the log."
+  ,"dialog.candidates.apply": "Apply selected"
+  ,"dialog.candidates.manual": "Manual correction"
+  ,"dialog.candidates.scan": "Scan result"
+  ,"dialog.candidates.default": "Default value"
+  ,"ui.default_expression": "Evaluate expression"
+  ,"ui.remember_last": "Remember last value"
+  ,"ui.save_view": "Save view"
+  ,"tooltip.save_view": "Use the current zoom and center as the default for subsequent pages of the open PDF and Auto."
+  ,"tooltip.field.default_expression": "Evaluates the value for every page. Put the formula in the default value, not in the OCR pattern: {235:+1} gives 235, 236… by PDF page; {505:+1#} by successful saves; {1:+1}, {20:-1}, {2:*2}, {0:%10}. %0 produces an empty value without a crash. Mutually exclusive with remembering the last value. This frame is not OCR'd."
+  ,"tooltip.field.remember_last": "After Apply in review or saving the page, stores the confirmed value (including a human correction) as the initial value for the next page. A raw OCR hit is not remembered by itself. Mutually exclusive with an evaluated expression."
+  ,"config.default_preprocess_strategy.label": "Default OCR strategy"
+  ,"config.default_preprocess_strategy.tooltip": "New field frames inherit this strategy immediately. You can change it on the field without Retry: it already applies to the first Recognize page and to Auto."
+  ,"config.reset_windows": "Reset window positions"
+  ,"config.reset_windows.tooltip": "While the app is running, Auto progress, review, and other dialogs stay where you dragged them. This button puts them back. After a restart they start at the default place again."
+  ,"config.reset_windows.done": "Window positions were reset."
+  ,"warn.expression.empty": "Field {id}: Evaluate expression is on, but the formula is empty. Put it in the default value, e.g. {{235:+1}} — not in the OCR pattern."
+  ,"warn.expression.invalid": "Field {id}: formula “{pattern}” is not valid. Use {{235:+1}} or {{505:+1#}} in the default value."
+  ,"warn.pattern.counter": "Field {id}: “{pattern}” is a filename formula, not an OCR pattern. Move it to the default value and turn on Evaluate expression."
+  ,"warn.pattern.invalid": "Field {id}: pattern “{pattern}” could not be read. Fix it, or leave it empty for raw frame text."
+}

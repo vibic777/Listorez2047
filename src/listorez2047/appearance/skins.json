@@ -1,0 +1,90 @@
+{
+  "default_skin": "it_gray",
+  "default_icon": "it",
+  "skin_default_icon": {
+    "it_gray": "it",
+    "auto_black": "auto",
+    "gas_blue": "gas",
+    "transport_green": "transport"
+  },
+  "skins": [
+    {
+      "id": "it_gray",
+      "title_key": "skin.it_gray",
+      "window": "#E8EAED",
+      "panel": "#F5F6F8",
+      "panel_alt": "#DADCE0",
+      "text": "#202124",
+      "text_muted": "#5F6368",
+      "accent": "#5F6368",
+      "accent_text": "#FFFFFF",
+      "button": "#DADCE0",
+      "button_hover": "#C5C9CE",
+      "border": "#BDC1C6",
+      "input": "#FFFFFF",
+      "danger": "#C5221F",
+      "field_ok": "#188038",
+      "field_warn": "#F9AB00"
+    },
+    {
+      "id": "auto_black",
+      "title_key": "skin.auto_black",
+      "window": "#121212",
+      "panel": "#1C1C1C",
+      "panel_alt": "#2A2A2A",
+      "text": "#F2F2F2",
+      "text_muted": "#A8A8A8",
+      "accent": "#C0C0C0",
+      "accent_text": "#121212",
+      "button": "#2A2A2A",
+      "button_hover": "#3A3A3A",
+      "border": "#3D3D3D",
+      "input": "#161616",
+      "danger": "#E85D4C",
+      "field_ok": "#7DCEA0",
+      "field_warn": "#E8B923"
+    },
+    {
+      "id": "gas_blue",
+      "title_key": "skin.gas_blue",
+      "window": "#0B3A6E",
+      "panel": "#0E4A8C",
+      "panel_alt": "#1560B0",
+      "text": "#FFFFFF",
+      "text_muted": "#B9D7F0",
+      "accent": "#7EC8F0",
+      "accent_text": "#0B3A6E",
+      "button": "#1560B0",
+      "button_hover": "#1A73C7",
+      "border": "#4A90C2",
+      "input": "#0A2F5C",
+      "danger": "#FF8A80",
+      "field_ok": "#80E27E",
+      "field_warn": "#FFE082"
+    },
+    {
+      "id": "transport_green",
+      "title_key": "skin.transport_green",
+      "window": "#0F4A38",
+      "panel": "#14664C",
+      "panel_alt": "#1B7A5B",
+      "text": "#F4FFF8",
+      "text_muted": "#C8E6C9",
+      "accent": "#C8E6C9",
+      "accent_text": "#0F4A38",
+      "button": "#1B7A5B",
+      "button_hover": "#21936C",
+      "border": "#4CAF7A",
+      "input": "#0C3B2C",
+      "danger": "#EF9A9A",
+      "field_ok": "#A5D6A7",
+      "field_warn": "#FFE082"
+    }
+  ],
+  "icons": [
+    { "id": "it", "title_key": "icon.it", "file": "it.png" },
+    { "id": "auto", "title_key": "icon.auto", "file": "auto.png" },
+    { "id": "gas", "title_key": "icon.gas", "file": "gas.png" },
+    { "id": "transport", "title_key": "icon.transport", "file": "transport.png" }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "default": "ru",
+  "languages": [
+    {
+      "code": "ru",
+      "native_name": "Русский",
+      "english_name": "Russian"
+    },
+    {
+      "code": "en",
+      "native_name": "English",
+      "english_name": "English"
+    }
+  ]
+}

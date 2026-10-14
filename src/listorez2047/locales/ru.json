@@ -1,0 +1,244 @@
+{
+  "app.name": "Листорез2047",
+  "menu.file": "Файл",
+  "menu.file.open": "Открыть PDF…",
+  "menu.file.close": "Закрыть",
+  "menu.file.output_folder": "Папка результата…",
+  "menu.file.save_page": "Сохранить страницу",
+  "menu.file.auto": "Автомат",
+  "menu.file.exit": "Выход",
+  "menu.profile": "Профиль",
+  "menu.profile.load": "Загрузить…",
+  "menu.profile.save": "Сохранить",
+  "menu.profile.save_as": "Сохранить как…",
+  "menu.edit": "Правка",
+  "menu.edit.add_field": "Добавить поле",
+  "menu.edit.delete_field": "Удалить поле",
+  "menu.edit.recognize_page": "Распознать страницу",
+  "menu.edit.reset_page": "Сбросить страницу в «не обработана»",
+  "menu.view": "Вид",
+  "menu.view.zoom_in": "Приблизить",
+  "menu.view.zoom_out": "Отдалить",
+  "menu.view.fit": "Вписать в окно",
+  "menu.view.rotate": "Поворот…",
+  "menu.view.language": "Язык",
+  "menu.view.skin": "Скин",
+  "menu.view.icon": "Иконка приложения",
+  "skin.it_gray": "Серый (IT)",
+  "skin.auto_black": "Чёрный (авто)",
+  "skin.gas_blue": "Синий (газ)",
+  "skin.transport_green": "Зелёный (транспорт)",
+  "icon.it": "Листорез",
+  "icon.auto": "Автомобиль",
+  "icon.gas": "Газ",
+  "icon.transport": "Транспорт (ж/д + авиа)",
+  "dialog.config.skin": "Скин",
+  "dialog.config.icon": "Иконка приложения",
+  "menu.ocr": "OCR",
+  "menu.ocr.enable": "Включить OCR",
+  "menu.ocr.deskew": "Автовыравнивание",
+  "menu.ocr.config": "Конфигурация…",
+  "menu.help": "Справка",
+  "menu.help.howto": "Как работать с программой",
+  "menu.help.cheatsheet": "Шпаргалка паттернов и имени",
+  "menu.help.about": "О программе",
+  "ui.file": "Файл",
+  "ui.browse": "Обзор…",
+  "ui.ocr": "OCR",
+  "ui.output_folder": "Папка результата",
+  "ui.name_template": "Шаблон имени",
+  "ui.name_preview": "Имя файла",
+  "ui.load_profile": "Загрузить профиль",
+  "ui.save_profile": "Сохранить профиль",
+  "ui.deskew": "Автовыравнивание",
+  "ui.config": "Конфигурация",
+  "ui.pages": "Страницы",
+  "ui.fields": "Поля",
+  "ui.cheatsheet": "Шпаргалка",
+  "ui.preview": "Предпросмотр",
+  "ui.zoom_in": "Приблизить",
+  "ui.zoom_out": "Отдалить",
+  "ui.fit": "Вписать",
+  "ui.add_field": "Добавить поле",
+  "ui.delete_field": "Удалить",
+  "ui.recognize_page": "Распознать страницу",
+  "ui.manual_input": "Ручной ввод полей",
+  "tooltip.manual_input": "Открыть все поля текущей страницы с уже распознанными значениями для ручной проверки и исправления.",
+  "menu.edit.manual_input": "Ручной ввод полей",
+  "ui.save": "Сохранить",
+  "ui.next": "Следующий / Пропуск",
+  "ui.auto": "Автомат",
+  "ui.auto.tooltip": "Распознать все имена и сохранить. Предпросмотр остаётся доступным: зум, сдвиг и «Сохранить вид».",
+  "ui.pattern": "Паттерн",
+  "ui.default_value": "Значение по умолчанию",
+  "ui.value": "Значение",
+  "ui.field_label": "Подпись",
+  "ui.ocr_languages": "Языки OCR",
+  "ui.geometry": "Положение и размер",
+  "ui.contrast": "Контраст",
+  "ui.contrast.enable": "Усилить слабый текст",
+  "ui.overlap": "Налезание",
+  "ui.overlap.clip": "Обрезать",
+  "ui.overlap.recognize": "Распознавать",
+  "ui.overlap.tooltip": "Если рамки пересекаются: обрезать чужой кусок у этой рамки или распознавать весь прямоугольник.",
+  "status.page_of": "Страница {current} из {total}",
+  "status.digital": "цифровой",
+  "status.scan": "скан",
+  "status.mixed": "смешанный",
+  "status.ocr_on": "OCR вкл",
+  "status.ocr_off": "OCR выкл",
+  "status.ready": "Готово",
+  "page.pending": "не обработана",
+  "page.recognized": "распознана",
+  "page.saved": "сохранена",
+  "page.skipped": "пропущена",
+  "page.error": "ошибка",
+  "page.duplicate": "дубль",
+  "page.current": "текущая",
+  "dialog.rotate.title": "Поворот страницы",
+  "dialog.rotate.left": "90° влево",
+  "dialog.rotate.180": "180°",
+  "dialog.rotate.right": "90° вправо",
+  "dialog.rotate.angle": "Угол",
+  "dialog.rotate.apply_all": "Применить ко всем страницам",
+  "dialog.rotate.reset": "Сбросить",
+  "dialog.rotate.apply": "Применить",
+  "dialog.duplicate.title": "Файл уже существует",
+  "dialog.duplicate.body": "{name} уже есть в папке.",
+  "dialog.duplicate.rename": "Сохранить под другим именем",
+  "dialog.duplicate.suffix": "Автосуффикс -1, -2, -3",
+  "dialog.candidates.title": "Несколько вариантов",
+  "dialog.candidates.own": "Своё значение",
+  "dialog.candidates.skip": "Пропустить",
+  "dialog.candidates.choose": "Выбрать",
+  "dialog.notext.title": "Нет текстового слоя",
+  "dialog.notext.body": "На этой странице нет текста. Включить OCR?",
+  "dialog.notext.page": "Для этой страницы",
+  "dialog.notext.file": "Для всего файла",
+  "dialog.auto_report.title": "Автомат завершён",
+  "dialog.auto_report.saved": "Сохранено: {n}",
+  "dialog.auto_report.empty": "Страницы с пустыми полями",
+  "dialog.auto_report.suffix": "Переименованы с суффиксом",
+  "dialog.config.title": "Конфигурация OCR",
+  "dialog.config.language": "Язык интерфейса",
+  "dialog.config.defaults": "По умолчанию",
+  "dialog.config.save": "Сохранить",
+  "common.cancel": "Отмена",
+  "common.close": "Закрыть",
+  "common.ok": "ОК",
+  "about.body": "Листорез2047 — офлайн-сплиттер PDF: режет файл по листам и собирает имя по шаблону. OCR нужен только для имени. Движок: RapidOCR / PP-OCRv5.",
+  "warn.fields_renumbered": "Поля перенумерованы. Проверьте шаблон имени.",
+  "lang.ru": "Русский",
+  "lang.en": "English",
+  "status.draw_field": "Нарисуйте прямоугольник поля на странице",
+  "error.encrypted": "Файл защищён паролем и не может быть открыт.",
+  "error.bad_pdf": "Не удалось открыть PDF. Возможно, файл повреждён.",
+  "error.render": "Не удалось показать страницу.",
+  "error.save": "Не удалось сохранить страницу. Проверьте папку и доступ к файлу.",
+  "error.profile": "Не удалось загрузить профиль.",
+  "error.language_required": "Должен быть включён хотя бы один язык OCR.",
+  "dialog.empty_pattern.body": "У поля нет паттерна. Продолжить с сырым текстом рамки?",
+  "dialog.empty_pattern.auto": "Есть поля без паттерна. Продолжить для всей пачки с сырым текстом?",
+  "dialog.profile.replace": "Заменить текущие поля полями из профиля?",
+  "dialog.auto_report.errors": "Ошибки",
+  "config.dpi.label": "DPI OCR", "config.dpi.tooltip": "Разрешение растра для OCR. 300 — баланс качества, памяти и времени. На превью не влияет.",
+  "config.ocr_max_side.label": "Максимальная сторона", "config.ocr_max_side.tooltip": "Максимальная сторона OCR-растра в пикселях. 3508 примерно соответствует A4 при 300 DPI.",
+  "config.cpu_threads.label": "Потоки CPU", "config.cpu_threads.tooltip": "Потоки ONNX внутри одной страницы: от 1 до 4, по умолчанию 2.",
+  "config.use_angle_cls.label": "Классификатор угла", "config.use_angle_cls.tooltip": "Проверяет поворот текста 0°/180°. Немного замедляет распознавание.",
+  "config.drop_score.label": "Минимальная уверенность", "config.drop_score.tooltip": "Блоки ниже этой уверенности отбрасываются. 0.5 — баланс.",
+  "config.det_limit_side_len.label": "Размер детектора", "config.det_limit_side_len.tooltip": "Внутренний размер детектора RapidOCR. Больше — лучше мелкий текст и выше расход памяти.",
+  "config.rec_batch_num.label": "Пакет распознавания", "config.rec_batch_num.tooltip": "Число текстовых блоков в пакете. 4–8 — нормальный диапазон.",
+  "config.lang_eslav.label": "Русский", "config.lang_eslav.tooltip": "Модель русского и восточнославянских языков.",
+  "config.lang_latin.label": "Латиница", "config.lang_latin.tooltip": "Латинские языки: EN, DE, FR, ES и другие.",
+  "config.lang_chinese.label": "Китайский", "config.lang_chinese.tooltip": "Китайская модель крупнее и по умолчанию выключена.",
+  "config.prefer_native_text.label": "Сначала текст PDF", "config.prefer_native_text.tooltip": "На цифровых страницах сначала читать готовый текстовый слой PDF.",
+  "config.field_padding_pct.label": "Отступ поля, %", "config.field_padding_pct.tooltip": "Расширяет область поля, чтобы не срезать края букв.",
+  "help.pattern.month": "Дата со словом месяца: паттерн DD.M.DDDD, в имя всегда 01.06.2026.",
+  "dialog.auto_empty.title": "Автомат остановлен: пустые поля",
+  "dialog.auto_empty.body": "На странице {page} не распознаны обязательные для имени значения. Заполните поля перед сохранением.",
+  "dialog.auto_empty.apply": "Применить и продолжить",
+  "dialog.auto_empty.skip": "Пропустить страницу",
+  "dialog.auto_empty.cancel": "Отменить Автомат",
+  "dialog.manual.apply": "Применить и сохранить",
+  "dialog.manual.cancel": "Отмена",
+  "dialog.auto_empty.required": "Заполните все перечисленные поля или пропустите страницу."
+  ,"dialog.auto_empty.missing_mark": " — НЕ РАСПОЗНАНО"
+  ,"dialog.auto_empty.filename_required": "Итоговое имя файла не может быть пустым."
+  ,"ocr.lang.cyrillic": "Кириллица (русский)"
+  ,"ocr.lang.latin": "Латиница"
+  ,"ocr.lang.chinese": "Китайский"
+  ,"tooltip.field.label": "Понятное название поля, например «Дата» или «Номер акта». На распознавание не влияет."
+  ,"tooltip.field.pattern": "Правило поиска и нормализации. Примеры: DD.M.DDDD — дата; D{1,4} — номер до 4 цифр; C+ — слово."
+  ,"tooltip.field.value": "Результат для текущей страницы. Его всегда можно исправить вручную; он подставляется в шаблон имени как {номер поля}."
+  ,"tooltip.ocr_language": "Языковые модели для этого поля. Ничего не выбрано — используются глобальные настройки. Кириллица нужна для русского текста."
+  ,"tooltip.name_template": "Рецепт имени. Пример: Акт_{1}_от_{2}_{505:+1#}. Поля подставляются как {1}, {2}; # считает успешные сохранения."
+  ,"tooltip.filename": "Итоговое имя текущей страницы. Можно изменить вручную перед сохранением."
+  ,"tooltip.page_format": "Ожидаемый формат бланка. Custom позволяет задать ширину и высоту с выбором мм, см или дюймов."
+  ,"tooltip.custom_size": "Ширина и высота страницы в выбранных единицах. При смене единиц физический размер сохраняется и значения пересчитываются."
+  ,"config.ocr_contrast.label": "Контраст слабого текста"
+  ,"config.ocr_contrast.tooltip": "Локально усиливает слабый карандаш перед OCR. 1.0 — выключено; 2–3 делает штрихи заметнее, но может усилить шум бумаги."
+  ,"tooltip.field.contrast": "Контраст именно этого поля. 1.0 — без обработки; 2–3 усиливает слабый карандаш. После изменения нажмите «Пересканировать поле»."
+  ,"tooltip.field.geometry": "Координаты X/Y и размер W/H рамки. Единицы: проценты страницы, пиксели предпросмотра, мм или см."
+  ,"dialog.recognition_review.title": "Проверка распознавания"
+  ,"dialog.recognition_review.retry": "Пересканировать поле"
+  ,"dialog.recognition_review.retry.tooltip": "Повторно распознать только эту рамку с указанным контрастом и выбрать результат сканирования или значение по умолчанию."
+  ,"dialog.recognition_review.value.tooltip": "Выпадающий список: результат сканирования и значение по умолчанию. Можно вписать своё."
+  ,"status.recognizing": "Фоновое распознавание страницы {page}…"
+  ,"status.preview_free": "предпросмотр доступен"
+  ,"status.ocr_busy": "OCR уже работает в фоне. Можно масштабировать, двигать и сохранять вид предпросмотра."
+  ,"error.ocr": "Ошибка OCR: {error}"
+  ,"tooltip.range": "Допустимый диапазон: {minimum}…{maximum}. Стрелки и клавиши ↑/↓ останавливаются на границах."
+  ,"tooltip.hotkey": "Горячая клавиша: {shortcut}."
+  ,"tooltip.field.strategy": "Стратегия подготовки этого поля сразу, с первого распознавания: CLAHE для карандаша; Убрать серый фон бумаги — для светло-серого карандаша на не совсем белом листе; Адаптивный порог; удаление линий; увеличение и резкость. Не зависит от галки усиления контраста."
+  ,"ocr.strategy.standard": "Обычная"
+  ,"ocr.strategy.clahe": "Локальный контраст (карандаш)"
+  ,"ocr.strategy.paper_normalize": "Убрать серый фон бумаги"
+  ,"ocr.strategy.adaptive": "Адаптивный ч/б порог"
+  ,"ocr.strategy.remove_lines": "Убрать горизонтальные линии"
+  ,"ocr.strategy.upscale_sharpen": "Увеличить и повысить резкость"
+  ,"tooltip.field.default_value": "Подставляется, если OCR ничего не распознал. Автомат всё равно остановится для проверки; в списке будут результат сканирования и это значение, его можно сразу исправить."
+  ,"config.logging_enabled.label": "Записывать журнал"
+  ,"config.logging_enabled.tooltip": "По умолчанию выключен. При включении пишет запуск, OCR, сохранения и ошибки в текстовый файл. Необработанные сбои Qt тоже попадают в журнал."
+  ,"config.log_path.label": "Путь к журналу"
+  ,"config.log_path.tooltip": "Для собранного exe — Listorez2047.log рядом с программой. При запуске из исходников — в папке AppData/Listorez2047. Можно выбрать другой доступный для записи путь."
+  ,"config.log_levels.label": "Уровни журнала"
+  ,"config.log_levels.tooltip": "Отметьте, какие уровни писать в файл. По умолчанию включены все: TRACE, DEBUG, INFO, WARNING, ERROR, CRITICAL."
+  ,"config.log_level.trace": "TRACE"
+  ,"config.log_level.debug": "DEBUG"
+  ,"config.log_level.info": "INFO"
+  ,"config.log_level.warning": "WARNING"
+  ,"config.log_level.error": "ERROR"
+  ,"config.log_level.critical": "CRITICAL"
+  ,"error.log": "Не удалось открыть файл журнала. Выберите доступный для записи путь."
+  ,"error.log_levels_required": "Включите хотя бы один уровень журнала или снимите галку записи журнала."
+  ,"ui.output_relative": "Относительный путь"
+  ,"tooltip.output_relative": "Путь считается от папки открытого PDF (или профиля). Абсолютный путь тоже можно вписать. Сохраняется в профиле вместе с папкой результата."
+  ,"dialog.create_folder.title": "Создать папку?"
+  ,"dialog.create_folder.body": "Папка не существует:\n{path}\n\nСоздать её вместе с вложенными каталогами?"
+  ,"error.create_folder": "Не удалось создать папку:\n{path}"
+  ,"error.output_not_dir": "Путь результата существует, но это не папка:\n{path}"
+  ,"config.ocr_engine.label": "Движок OCR при запуске"
+  ,"config.ocr_engine.tooltip": "Используется RapidOCR / PP-OCRv5 на CPU."
+  ,"ocr.engine.rapidocr": "RapidOCR"
+  ,"status.engine_loading": "Загрузка движка {engine} в память…"
+  ,"status.engine_error": "Не удалось загрузить OCR: {error}. Подробности записаны в журнал."
+  ,"dialog.candidates.apply": "Применить выбранное"
+  ,"dialog.candidates.manual": "Ручная коррекция"
+  ,"dialog.candidates.scan": "Результат сканирования"
+  ,"dialog.candidates.default": "Значение по умолчанию"
+  ,"ui.default_expression": "Вычислять выражение"
+  ,"ui.remember_last": "Запоминать последнее значение"
+  ,"ui.save_view": "Сохранить вид"
+  ,"tooltip.save_view": "Запомнить текущий масштаб и центр как вид по умолчанию для следующих страниц открытого PDF и Автомата."
+  ,"tooltip.field.default_expression": "Вычисляет значение по формуле при каждой странице. Формулу пишите в «значение по умолчанию», не в паттерн OCR: {235:+1} даёт 235, 236… по номеру листа; {505:+1#} — по успешным сохранениям; {1:+1}, {20:-1}, {2:*2}, {0:%10}. При %0 получится пустая строка без сбоя. Несовместимо с запоминанием последнего значения. OCR этой рамки не нужен."
+  ,"tooltip.field.remember_last": "После «Применить» в проверке или сохранения страницы записывает подтверждённое значение (уже с правкой человека) как начальное для следующей страницы. Сырой OCR сам по себе не запоминается. Несовместимо с вычисляемым выражением."
+  ,"config.default_preprocess_strategy.label": "Стратегия OCR по умолчанию"
+  ,"config.default_preprocess_strategy.tooltip": "Новые рамки получают эту стратегию сразу. Её можно сменить у поля без пересканирования: она действует уже на первое «Распознать страницу» и на Автомат."
+  ,"config.reset_windows": "Сбросить положение окон"
+  ,"config.reset_windows.tooltip": "Пока программа открыта, прогресс Автомата, проверка и другие окна остаются там, куда их сдвинули. Кнопка возвращает их в исходное место. После перезапуска положения снова стандартные."
+  ,"config.reset_windows.done": "Положения окон сброшены."
+  ,"warn.expression.empty": "Поле {id}: включено «Вычислять выражение», но формула пустая. Впишите её в значение по умолчанию, например {{235:+1}} — не в паттерн OCR."
+  ,"warn.expression.invalid": "Поле {id}: формула «{pattern}» не подходит. Нужен вид {{235:+1}} или {{505:+1#}} в значении по умолчанию."
+  ,"warn.pattern.counter": "Поле {id}: «{pattern}» — это формула имени, не паттерн OCR. Перенесите её в значение по умолчанию и включите «Вычислять выражение»."
+  ,"warn.pattern.invalid": "Поле {id}: паттерн «{pattern}» не распознан. Исправьте его или оставьте пустым для сырого текста рамки."
+}
